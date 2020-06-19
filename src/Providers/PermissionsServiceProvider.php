@@ -3,9 +3,11 @@
 namespace MIMAXUZ\LRoles\Providers;
 
 use MIMAXUZ\LRoles\Models\XPermissions;
+use MIMAXUZ\LRoles\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Routing\Router;
 
 class PermissionsServiceProvider extends ServiceProvider
 {
@@ -16,7 +18,7 @@ class PermissionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+      //
     }
 
     /**
@@ -24,8 +26,18 @@ class PermissionsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Router $router)
     {
+         $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
+
+         // if ($this->app->runningInConsole()) {
+        //     $this->commands([
+        //         Commands\PermissionsGenerate::class,
+        //         Commands\PermissionsClear::class,
+        //     ]);
+        // }
+        $router->aliasMiddleware('role', RoleMiddleware::class);
+
         try {
             XPermissions::get()->map(function ($permission) {
                 Gate::define($permission->slug, function ($user) use ($permission) {
