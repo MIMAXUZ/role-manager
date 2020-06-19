@@ -1,0 +1,25 @@
+{
+    "name": "mimaxuz/laravel-roles",
+    "description": "Simple Laravel roles and permissions for Laravel applications",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oktam Yaqubov",
+            "email": "oktam@yaqubov.info"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MIMAXUZ\\LRoles\\": "src/"
+        },
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MIMAXUZ\\LRoles\\PermissionsServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
