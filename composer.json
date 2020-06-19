@@ -1,5 +1,5 @@
 {
-    "name": "mimaxuz/laravel-roles",
+    "name": "mimaxuz/role-manager",
     "description": "Simple Laravel roles and permissions for Laravel applications",
     "type": "library",
     "license": "MIT",
