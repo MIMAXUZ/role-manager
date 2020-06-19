@@ -17,7 +17,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MIMAXUZ\\LRoles\\PermissionsServiceProvider"
+                "MIMAXUZ\\LRoles\\Providers\\PermissionsServiceProvider"
             ]
         }
     },
