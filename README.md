@@ -8,7 +8,7 @@ In many projects, you have to work with roles and permissions. Many packages are
 
 ## Installation
 However, if you are not using Homestead, you will need to make sure your server meets the following requirements:
-- HP >= 7.2.5
+- PHP >= 7.2.5
 - BCMath PHP Extension
 - Ctype PHP Extension
 - Fileinfo PHP extension
