@@ -25,6 +25,6 @@
     "require": {
         "php": "^7.2.5",
         "illuminate/auth": "^5.8|^6.0|^7.0|^8.0",
-        "illuminate/database": "^5.8|^6.0|^7.0|^8.0"
+        "illuminate/database": "^6.20.14|^8.0"
     }
 }
