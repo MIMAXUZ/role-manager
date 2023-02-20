@@ -24,7 +24,7 @@
     "homepage": "https://github.com/MIMAXUZ/role-manager",
     "require": {
         "php": "^7.2|^8.0.2|^8.1|^8.2",
-        "illuminate/auth": "^v7.0|^v8.0|^v9.0",
-        "illuminate/database": "^v8.0.0|^v9.0.0|^9.22.1"
+        "illuminate/auth": "^v7.0|^v8.0|^v9.0|^10.0",
+        "illuminate/database": "^v8.0.0|^v9.0.0|^9.22.1|^10.0"
     }
 }
