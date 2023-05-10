@@ -3,7 +3,6 @@
 namespace MIMAXUZ\LRoles\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class XRoles extends Model
 {

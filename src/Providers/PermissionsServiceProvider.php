@@ -29,7 +29,7 @@ class PermissionsServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
          $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
-
+        
          // if ($this->app->runningInConsole()) {
         //     $this->commands([
         //         Commands\PermissionsGenerate::class,
