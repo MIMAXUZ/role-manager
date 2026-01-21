@@ -2,7 +2,7 @@
 
 namespace MIMAXUZ\LRoles\Traits;
 
-use MIMAXUZ\LRoles\Models\XPermission;
+use MIMAXUZ\LRoles\Models\XPermissions;
 use MIMAXUZ\LRoles\Models\XRoles;
 
 trait HasPermissions
@@ -10,8 +10,7 @@ trait HasPermissions
     public function givePermissionsTo(... $permissions)
     {
         $permissions = $this->getAllPermissions($permissions);
-        dd($permissions);
-        if ($permissions === null) {
+        if ($permissions->isEmpty()) {
             return $this;
         }
         $this->permissions()->saveMany($permissions);
@@ -67,6 +66,6 @@ trait HasPermissions
 
     protected function getAllPermissions(array $permissions)
     {
-        return XPermission::whereIn('slug', $permissions)->get();
+        return XPermissions::whereIn('slug', $permissions)->get();
     }
 }
