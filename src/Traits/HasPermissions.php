@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace MIMAXUZ\LRoles\Traits;
 
@@ -27,11 +27,16 @@ trait HasPermissions
     public function refreshPermissions(... $permissions)
     {
         $this->permissions()->detach();
-        return $this->givePermissionsTo($permissions);
+        return $this->givePermissionsTo(...$permissions);
     }
 
     public function hasPermissionTo($permission)
     {
+        $superAdminRoles = config('role-manager.super_admin_roles', []);
+        if (!empty($superAdminRoles) && $this->hasRole(...$superAdminRoles)) {
+            return true;
+        }
+
         return $this->hasPermissionThroughRole($permission) || $this->hasPermission($permission);
     }
 
@@ -59,6 +64,12 @@ trait HasPermissions
     {
         return $this->belongsToMany(XRoles::class, 'users_roles');
     }
+
+    public function permissions()
+    {
+        return $this->belongsToMany(XPermissions::class, 'users_permissions');
+    }
+
     protected function hasPermission($permission)
     {
         return (bool) $this->permissions->where('slug', $permission->slug)->count();

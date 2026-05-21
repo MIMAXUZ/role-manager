@@ -40,6 +40,7 @@ return [
         'permissions' => 'x_permissions',
         'role_permissions' => 'roles_permissions',
         'user_roles' => 'users_roles',
+        'user_permissions' => 'users_permissions',
     ],
 
     /*

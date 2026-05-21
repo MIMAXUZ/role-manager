@@ -79,6 +79,7 @@ class SeedDefaultsCommand extends Command
 
         DB::table(config('role-manager.tables.role_permissions', 'roles_permissions'))->truncate();
         DB::table(config('role-manager.tables.user_roles', 'users_roles'))->truncate();
+        DB::table(config('role-manager.tables.user_permissions', 'users_permissions'))->truncate();
         XRoles::truncate();
         XPermissions::truncate();
 
